@@ -1,0 +1,17 @@
+$grey: #ebebeb;
+$dark-grey: #333;
+
+body { background-color: $grey; }
+
+.home-button {
+  display: block; height: 109px; width: 231px; background-size: cover; background-position: center center;
+  padding: 46px 10px 10px 80px; color: $dark-grey; text-align: center; margin: 10px auto 0;
+
+  &.button1 { background-image: image-url('button1.png') }
+  &.button2 { background-image: image-url('button2.png') }
+  &.button3 { background-image: image-url('button3.png') }
+  &:hover { text-decoration: none; }
+}
+
+
+

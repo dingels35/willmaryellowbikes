@@ -9,15 +9,20 @@
 </head>
 <body ng-app='willmaryellowbikes'>
   <header>
-    <a ui-sref='home'><b>Willmar Yellow Bikes</b></a>
-    <hr />
+    <a ui-sref='home'>
+      <%= image_tag "header_w_logo", class: 'img-responsive' %>
+    </a>
   </header>
 
-  <%= yield %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 
   <hr />
   <footer>
-    -- Hack2o --
+    <div class="container-fluid">
+      -- Hack2o --
+    </div>
   </footer>
 
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js" %>
