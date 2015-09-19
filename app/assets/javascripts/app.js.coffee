@@ -3,6 +3,7 @@ wybApp = angular.module 'willmaryellowbikes', [
   'wyb.config'
   'wyb.features'
   'wyb.services'
+  'wyb.templates'
 ]
 
 wybAppRun = () ->

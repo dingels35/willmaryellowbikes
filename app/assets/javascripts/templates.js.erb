@@ -1,0 +1,18 @@
+angular.module('wyb.templates', []).run([ '$templateCache', function($templateCache) {
+  <%
+    environment.context_class.instance_eval { include ActionView::Helpers::JavaScriptHelper }
+    app_root  = File.expand_path('../', __FILE__)
+    templates = File.join(app_root, %w{** *.html})
+    Dir.glob(templates).each do |f|
+      # puts "---->>> " + f
+      depend_on(f)
+      key = f.gsub(%r(^#{app_root}/),'').gsub(".haml",'')
+      content = environment.find_asset(f).source
+      unless content.strip[0,1] == "<"
+        content = Haml::Engine.new(content).render(self)
+      end
+  %>
+    $templateCache.put("/assets/<%= key %>", "<%= escape_javascript(content) %>" );
+<% end %>
+}]);
+
