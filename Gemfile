@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'puma'
 gem 'rails'
 gem 'pg'
+gem 'uglifier'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem "haml-rails"
