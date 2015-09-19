@@ -6,7 +6,6 @@ gem 'pg'
 gem 'uglifier'
 gem 'sass-rails'
 gem 'coffee-rails'
-gem "haml-rails"
 gem "cancancan"
 gem 'devise'
 gem "pry-rails"

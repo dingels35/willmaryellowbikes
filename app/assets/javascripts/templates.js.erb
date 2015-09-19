@@ -8,9 +8,9 @@ angular.module('wyb.templates', []).run([ '$templateCache', function($templateCa
       depend_on(f)
       key = f.gsub(%r(^#{app_root}/),'').gsub(".haml",'')
       content = environment.find_asset(f).source
-      unless content.strip[0,1] == "<"
-        content = Haml::Engine.new(content).render(self)
-      end
+      # unless content.strip[0,1] == "<"
+      #   content = Haml::Engine.new(content).render(self)
+      # end
   %>
     $templateCache.put("/assets/<%= key %>", "<%= escape_javascript(content) %>" );
 <% end %>

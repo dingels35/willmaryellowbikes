@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Willmaryellowbikes</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <base href="/" />
 </head>
@@ -21,6 +22,7 @@
 
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js" %>
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" %>
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js" %>
   <%= javascript_include_tag 'application' %>
 
 

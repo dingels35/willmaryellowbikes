@@ -11,7 +11,7 @@
         locationDescription: '',
         bikeNumber: ''
       };
-      vm.locationOptions: ['My location', 'Somewhere else'];
+      vm.locationOptions = ['My location', 'Somewhere else'];
 
     }
 
