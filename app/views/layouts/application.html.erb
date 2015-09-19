@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Willmaryellowbikes</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <base href="/" />
 </head>
-<body>
+<body ng-app='willmaryellowbikes'>
   <header>
     <b>Willmar Yellow Bikes</b>
+    <a ui-sref='home'>Home</a>
+    <a ui-sref='abandoned'>Report abandoned</a>
+    <a ui-sref='broken'>Report broken</a>
     <hr />
   </header>
 
@@ -18,5 +21,11 @@
   <footer>
     -- Hack2o --
   </footer>
+
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js" %>
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" %>
+  <%= javascript_include_tag 'application' %>
+
+
 </body>
 </html>
