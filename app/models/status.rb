@@ -14,7 +14,7 @@ class Status < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude
 
-  before_create :get_location_from_bike_rack
+  # before_create :get_location_from_bike_rack
 
   private
 

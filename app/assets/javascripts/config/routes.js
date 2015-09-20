@@ -23,11 +23,13 @@
           anonymous: true
         }
       };
-      addState('home',              '/',                  options);
-      addState('abandoned',         '/abandoned',         options);
-      addState('abandoned-success', '/abandoned/success', options);
-      addState('broken',            '/broken',            options);
-      addState('broken-success',    '/broken/success',    options);
+      addState('home',               '/',                   options);
+      addState('abandoned',          '/abandoned',          options);
+      addState('abandoned-success',  '/abandoned/success',  options);
+      addState('broken',             '/broken',             options);
+      addState('broken-success',     '/broken/success',     options);
+      addState('adopt-rack',         '/adopt-rack',         options);
+      addState('adopt-rack-success', '/adopt-rack/success', options);
       $urlRouterProvider.when('', '/');
       $urlRouterProvider.otherwise('/404');
     }

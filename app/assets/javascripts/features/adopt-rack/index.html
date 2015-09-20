@@ -1,0 +1,45 @@
+<h1>Adopt a bike rack</h1>
+
+<p>Help us keep track of where the bikes are by reporting the number of bikes in a rack.</p>
+
+<form>
+  <h2>Choose a rack</h2>
+  <div ng-if='vm.isLoading.location'>Getting your location...</div>
+
+  <div ng-if='!vm.isLoading.location'>
+
+    <div class="form-group" style="margin-top: 10px;">
+      <md-input-container>
+        <label>Please choose a rack</label>
+        <md-select ng-model="vm.form.bike_rack_id">
+          <md-option ng-repeat="rack in vm.bikeRacks" value="{{rack.id}}">{{rack.name}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+
+  </div>
+
+  <h2>How many bikes are in the rack?</h2>
+
+  <div class="form-group">
+    <md-input-container>
+      <label>Choose a number</label>
+      <md-select ng-model="vm.form.bike_count">
+        <md-option ng-repeat="number in vm.numbers" value="{{number}}">{{number}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+
+  <div ng-if='vm.errorMessage' class="alert alert-danger">
+    {{ vm.errorMessage }}
+  </div>
+  <div><wyb-button submitting='vm.isLoading.submit' ng-click="vm.submit();">Submit</wyb-button></div>
+
+</form>
+
+
+
+
+
+
