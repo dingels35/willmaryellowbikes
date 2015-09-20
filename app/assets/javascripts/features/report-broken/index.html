@@ -1,4 +1,4 @@
-<h1>Report an abandoned bike</h1>
+<h1>Report a broken bike</h1>
 
 <form>
   <h2>Where is it?</h2>
@@ -27,7 +27,7 @@
 
   </div>
 
-  <h2>What is the bike number?</h2>
+  <h2>Please select bike number</h2>
 
   <md-input-container>
     <label>Number from sticker on bike (optional)</label>
@@ -39,7 +39,7 @@
 
   <h2>What is wrong with the bike?</h2>
 
-  <md-switch ng-model="vm.selectedParts.tires" ng-true-value="'Tires or wheeles'">Tires or wheeles</md-switch>
+  <md-switch ng-model="vm.selectedParts.tires" ng-true-value="'Tires or wheels'">Tires or wheels</md-switch>
   <md-switch ng-model="vm.selectedParts.chain" ng-true-value="'Chain'">Chain</md-switch>
   <md-switch ng-model="vm.selectedParts.brakes" ng-true-value="'Brakes'">Brakes</md-switch>
   <md-switch ng-model="vm.selectedParts.seat" ng-true-value="'Seat'">Seat</md-switch>
@@ -47,6 +47,7 @@
     <label for="anything_else">Anything else?</label>
     <textarea class="form-control" rows="3" id='anything_else' ng-model='vm.anythingElse'></textarea>
   </div>
+  <br />
 
 
   <div ng-if='vm.errorMessage' class="alert alert-danger">
