@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   respond_to :json
-  before_filter :load_statuses
+  before_filter :load_statuses, except: :create
 
   def index
     @statuses = @statuses.apply_scopes(params[:scope]) if params[:scope]
@@ -12,7 +12,7 @@ class StatusesController < ApplicationController
   end
 
   def create
-    status = @statuses.build(permitted_params)
+    status = Status.new(permitted_params)
     if status.save
       render json: status, status: :created
     else
@@ -25,7 +25,7 @@ class StatusesController < ApplicationController
   def load_statuses
     @statuses = Status
     @statuses = Bike.find(params[:bike_id]).statuses if params[:bike_id]
-    @statuses = Bike.find(params[:bike_rack_id]).statuses if params[:bike_rack_id]
+    @statuses = BikeRack.find(params[:bike_rack_id]).statuses if params[:bike_rack_id]
   end
 
   def permitted_params

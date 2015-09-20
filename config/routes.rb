@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       resources :statuses, only: [:index, :show, :create]
     end
     resources :bike_racks, only: [:index, :show] do
+      collection do
+        get :closest
+      end
       resources :statuses, only: [:index, :show, :create]
     end
 

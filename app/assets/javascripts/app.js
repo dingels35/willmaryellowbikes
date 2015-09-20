@@ -1,11 +1,23 @@
 (function() {
   'use strict';
-  var wybApp, wybAppRun;
 
-  wybApp = angular.module('willmaryellowbikes', ['wyb.config', 'wyb.features', 'wyb.services', 'wyb.templates']);
+  var wybApp = angular.module(
+    'willmaryellowbikes',
+    [
+      'wyb.config',
+      'wyb.features',
+      'wyb.services',
+      'wyb.templates',
 
-  wybAppRun = function() {};
+      'angular-promise-cache',
+      'ngAnimate',
+      'ngMaterial',
+      'ngGeolocation',
+      'ui.bootstrap'
+    ]);
 
-  wybApp.run([wybAppRun]);
+  // wybAppRun = function() {};
+
+  // wybApp.run([wybAppRun]);
 
 }).call(this);

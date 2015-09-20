@@ -12,4 +12,7 @@ class Status < ActiveRecord::Base
 
   validates :type, presence: true
 
+  reverse_geocoded_by :latitude, :longitude
+
+
 end

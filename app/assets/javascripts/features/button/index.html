@@ -1,0 +1,8 @@
+<button ng-disabled='submitting || invalid' class="btn btn-primary btn-block button">
+  <span ng-if='submitting'>
+    {{ submittingText || 'Submitting...' }}
+  </span>
+  <span ng-if='!submitting'>
+    <ng-transclude />
+  <span>
+</button>
