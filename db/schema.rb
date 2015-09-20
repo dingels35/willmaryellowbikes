@@ -36,12 +36,13 @@ ActiveRecord::Schema.define(version: 20150919224248) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.string   "type"
+    t.string   "type",                 null: false
     t.integer  "bike_id"
     t.integer  "bike_rack_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "location_description"
+    t.text     "location_description"
+    t.text     "broken_description"
     t.boolean  "resolved"
     t.datetime "created_at"
     t.datetime "updated_at"

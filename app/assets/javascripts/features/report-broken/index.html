@@ -1,26 +1,58 @@
-<h1>Report a broken bike</h1>
+<h1>Report an abandoned bike</h1>
 
-<h2>Where is it?</h2>
-<div>
-  <input type='radio' name='location' value='true' id='location_my' /> <label for='location_my'>My Location</label> <br />
-  <input type='radio' name='location' value='false' id='location_else' /> <label for='location_else'>Somewhere Else</label> <br />
-</div>
+<form>
+  <h2>Where is it?</h2>
+  <div ng-if='vm.isLoading.location'>Getting your location...</div>
 
-<h2>What is the bike number?</h2>
-<div>
-  <input type='text' />
-<div>
-<h2>What is wrong with the bike?</h2>
-<div>
-  <input type='checkbox' name='wrong' value='true' id='TiresWheels' /> <label for='TiresWheels'>Tires or Wheels</label> <br />
-<div>
-  <input type='checkbox' name='wrong' value='true' id='chain' /> <label for='chain'>Chain</label> <br />
-<div>
-  <input type='checkbox' name='wrong' value='true' id='brakes' /> <label for='brakes'>Brakes</label> <br />
-<div>
-  <input type='checkbox' name='wrong' value='true' id='other' /> <label for='other'>Anything Else?</label> <input type='text' /> <br />
-</div>
-<p>&nbsp;</p>
-<div><button type='submit'>Submit</button></div>
+  <div ng-if='!vm.isLoading.location'>
 
+    <div class="btn-group btn-group-justified">
+      <label ng-repeat='l in vm.locationChoices' class="btn btn-primary btn-block" ng-model="vm.locationChoice" btn-radio="l.val">{{ l.text }}</label>
+    </div>
+
+    <div ng-if="vm.locationChoice == 'somewhereelse'" class="form-group" style="margin-top: 10px;">
+      <label for="location_description">Please describe where the bike is located.</label>
+      <textarea class="form-control" rows="3" id='location_description' ng-model='vm.form.location_description' ></textarea>
+    </div>
+
+    <div ng-if="vm.locationChoice == 'inarack'" class="form-group" style="margin-top: 10px;">
+      <md-input-container>
+        <label>Please choose a rack</label>
+        <md-select ng-model="vm.form.bike_rack_id">
+          <md-option ng-repeat="rack in vm.bikeRacks" value="{{rack.id}}">{{rack.name}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+
+  </div>
+
+  <h2>What is the bike number?</h2>
+
+  <md-input-container>
+    <label>Number from sticker on bike (optional)</label>
+    <md-select ng-model="vm.form.bike_id">
+      <md-option ng-repeat="bike in vm.bikes" value="{{bike.id}}">{{bike.identifier}}</md-option>
+    </md-select>
+  </md-input-container>
+
+
+  <h2>What is wrong with the bike?</h2>
+
+  <md-switch ng-model="vm.selectedParts.tires" ng-true-value="'Tires or wheeles'">Tires or wheeles</md-switch>
+  <md-switch ng-model="vm.selectedParts.chain" ng-true-value="'Chain'">Chain</md-switch>
+  <md-switch ng-model="vm.selectedParts.brakes" ng-true-value="'Brakes'">Brakes</md-switch>
+  <md-switch ng-model="vm.selectedParts.seat" ng-true-value="'Seat'">Seat</md-switch>
+  <div class="form-group">
+    <label for="anything_else">Anything else?</label>
+    <textarea class="form-control" rows="3" id='anything_else' ng-model='vm.anythingElse'></textarea>
+  </div>
+
+
+  <div ng-if='vm.errorMessage' class="alert alert-danger">
+    {{ vm.errorMessage }}
+  </div>
+  <div><wyb-button submitting='vm.isLoading.submit' ng-click="vm.submit();">Submit</wyb-button></div>
+
+</form>
 

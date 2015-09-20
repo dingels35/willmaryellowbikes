@@ -27,6 +27,7 @@
       addState('abandoned',         '/abandoned',         options);
       addState('abandoned-success', '/abandoned/success', options);
       addState('broken',            '/broken',            options);
+      addState('broken-success',    '/broken/success',    options);
       $urlRouterProvider.when('', '/');
       $urlRouterProvider.otherwise('/404');
     }

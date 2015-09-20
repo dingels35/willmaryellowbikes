@@ -30,7 +30,7 @@ class StatusesController < ApplicationController
 
   def permitted_params
     params.fetch(:status, {}).permit(
-      :bike_id, :bike_rack_id, :latitude, :longitude, :location_description, :type
+      :bike_id, :bike_rack_id, :latitude, :longitude, :location_description, :broken_description, :type, :resolved
     )
   end
 
