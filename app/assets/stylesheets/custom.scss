@@ -1,7 +1,19 @@
 $grey: #ebebeb;
 $dark-grey: #333;
+$yellow: #fddc03;
 
-body { background-color: $grey; }
+html { background-color: $grey; }
+body { background-color: $grey; color: $dark-grey; }
+footer {
+  background-color: $yellow;
+
+  .footer-box {
+    border: dashed 1px #fff; margin: 0 40px; padding: 10px 20px;
+    a { color: $dark-grey; font-size: 10px; }
+    img { display: block; margin: 0 auto; }
+  }
+
+}
 
 .home-button {
   display: block; height: 109px; width: 231px; background-size: cover; background-position: center center;
