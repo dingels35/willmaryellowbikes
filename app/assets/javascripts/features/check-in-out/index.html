@@ -1,0 +1,50 @@
+<h1>Bike check-in / check-out</h1>
+
+<form>
+
+  <h2>Where is it?</h2>
+
+  <div ng-if='vm.isLoading.location'>Getting your location...</div>
+
+  <div ng-if='!vm.isLoading.location'>
+
+    <div class="btn-group btn-group-justified">
+      <label ng-repeat='l in vm.locationChoices' class="btn btn-primary btn-block" ng-model="vm.locationChoice" btn-radio="l.val">{{ l.text }}</label>
+    </div>
+
+    <div ng-if="vm.locationChoice == 'inarack'" class="form-group" style="margin-top: 10px;">
+      <md-input-container>
+        <label>Please choose a rack</label>
+        <md-select ng-model="vm.form.bike_rack_id">
+          <md-option ng-repeat="rack in vm.bikeRacks" value="{{rack.id}}">{{rack.name}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+  </div>
+
+
+  <h2>What is the bike number?</h2>
+
+  <md-input-container>
+    <label>Number from sticker on bike (optional)</label>
+    <md-select ng-model="vm.form.bike_id">
+      <md-option ng-repeat="bike in vm.bikes" value="{{bike.id}}">{{bike.identifier}}</md-option>
+    </md-select>
+  </md-input-container>
+
+
+  <h2>Checking in or checking out?</h2>
+
+  <md-radio-group ng-model="vm.form.checking_in_or_out">
+    <md-radio-button value="checking-in">Checking in</md-radio-button>
+    <md-radio-button value="checking-out">Checking out</md-radio-button>
+  </md-radio-group>
+
+
+  <div ng-if='vm.errorMessage' class="alert alert-danger">
+    {{ vm.errorMessage }}
+  </div>
+  <div><wyb-button submitting='vm.isLoading.submit' ng-click="vm.submit();">Submit</wyb-button></div>
+
+</form>
