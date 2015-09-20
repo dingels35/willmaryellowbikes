@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150919224248) do
   create_table "statuses", force: :cascade do |t|
     t.string   "type"
     t.integer  "bike_id"
-    t.integer  "rack_id"
+    t.integer  "bike_rack_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "location_description"
