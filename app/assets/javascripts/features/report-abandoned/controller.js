@@ -15,7 +15,8 @@
         longitude: null,
         location_description: null,
         bike_rack_id: null,
-        bike_id: null
+        bike_id: null,
+        resolved: false
       };
       vm.isLoading = {
         location: false,

@@ -13,13 +13,12 @@
 
       ////////////////////
 
-      function list() {
-        return BaseService.get('bikes');
+      function list(data) {
+        return BaseService.get('bikes', data);
       }
 
       function find(bikeId) {
         return BaseService.get('bikes/' + bikeId);
-
       }
 
     }

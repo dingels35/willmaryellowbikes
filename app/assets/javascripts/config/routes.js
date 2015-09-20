@@ -30,6 +30,7 @@
       addState('broken-success',     '/broken/success',     options);
       addState('adopt-rack',         '/adopt-rack',         options);
       addState('adopt-rack-success', '/adopt-rack/success', options);
+      addState('admin',              '/admin',              options);
       $urlRouterProvider.when('', '/');
       $urlRouterProvider.otherwise('/404');
     }

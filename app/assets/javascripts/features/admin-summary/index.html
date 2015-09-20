@@ -1,0 +1,11 @@
+
+<div class='panel panel-default' ng-repeat='bike in vm.bikes'>
+  <div class='panel-heading'><h3 class='panel-title'>Bike #{{ bike.id }}</h3></div>
+  <div class='panel-body'>
+    <label ng-if='bike.abandoned' class='label label-warning'>Abandoned</label>
+    <label ng-if='bike.broken' class='label label-danger'>broken</label>
+    <div>
+      Location: [ coming soon... ]
+    </div>
+  </div>
+</div>
