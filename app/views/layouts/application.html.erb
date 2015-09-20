@@ -1,22 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
-  <title>Willmaryellowbikes</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset='utf-8'>
+  <meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta content='width=device-width, initial-scale=1.0, minimal-ui' name='viewport'>
+  <title>Willmar Yellow Bikes</title>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all' %>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.css', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <base href="/" />
 </head>
-<body>
+<body ng-app='willmaryellowbikes'>
   <header>
-    <b>Willmar Yellow Bikes</b>
-    <hr />
+    <a ui-sref='home'>
+      <%= image_tag "header_w_logo.jpg", class: 'img-responsive' %>
+    </a>
   </header>
 
-  <%= yield %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 
   <hr />
-  <footer>
-    -- Hack2o --
+  <footer class='text-center'>
+    <div>&nbsp;</div>
+    <div class='footer-box'>
+      <div class="row">
+        <div class='col-sm-3'><a ui-sref="home">HOME</a></div>
+        <div class='col-sm-3'><a href="http://www.willmar.k12.mn.us/Domain/780">ABOUT THE PROGRAM</a></div>
+        <div class='col-sm-3'><a href="http://www.willmar.k12.mn.us/Page/3656">YELLOW BIKE LOCATIONS</a></div>
+        <div class='col-sm-3'><a href="http://www.willmar.k12.mn.us/Page/3670">SPONSORS</a></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <%=image_tag 'footer_logos.png', class: 'img-responsive' %>
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
   </footer>
+
+
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-aria.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.js" %>
+  <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js" %>
+
+  <%= javascript_include_tag 'application' %>
+
+
 </body>
 </html>

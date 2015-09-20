@@ -1,0 +1,2 @@
+class CheckInStatusSerializer < StatusSerializer
+end

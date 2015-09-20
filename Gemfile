@@ -3,13 +3,15 @@ source 'https://rubygems.org'
 gem 'puma'
 gem 'rails'
 gem 'pg'
+gem 'geocoder'
+gem 'active_model_serializers'
 gem 'uglifier'
 gem 'sass-rails'
 gem 'coffee-rails'
-gem "haml-rails"
 gem "cancancan"
 gem 'devise'
 gem "pry-rails"
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 
 

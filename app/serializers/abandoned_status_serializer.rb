@@ -1,0 +1,2 @@
+class AbandonedStatusSerializer < StatusSerializer
+end

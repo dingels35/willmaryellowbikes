@@ -1,0 +1,5 @@
+class BrokenStatus < Status
+
+
+
+end

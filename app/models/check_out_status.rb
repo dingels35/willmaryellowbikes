@@ -1,0 +1,3 @@
+class CheckOutStatus < Status
+
+end

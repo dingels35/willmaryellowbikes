@@ -1,0 +1,3 @@
+class LocationStatus < Status
+
+end

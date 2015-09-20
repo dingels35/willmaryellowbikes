@@ -5,6 +5,23 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+
+  namespace :api, defaults: { format: :json }, module: false do
+    resources :bikes, only: [:index, :show] do
+      resources :statuses, only: [:index, :show, :create]
+    end
+    resources :bike_racks, only: [:index, :show] do
+      collection do
+        get :closest
+      end
+      resources :statuses, only: [:index, :show, :create]
+    end
+
+    resources :statuses, only: [:create, :show]
+  end
+
+  get '*path', to: 'home#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
