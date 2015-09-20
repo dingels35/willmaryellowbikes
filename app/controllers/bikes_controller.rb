@@ -2,7 +2,9 @@ class BikesController < ApplicationController
   respond_to :json
 
   def index
-    respond_with(Bike.all)
+    bikes = Bike.all
+    bikes = bikes.apply_scope(params[:scope]) if params[:scope]
+    respond_with(bikes)
   end
 
   def show

@@ -32,6 +32,8 @@
       addState('adopt-rack-success',   '/adopt-rack/success',   options);
       addState('check-in-out',         '/check-in-out',         options);
       addState('check-in-out-success', '/check-in-out/success', options);
+      addState('admin',                '/admin',                options);
+
       $urlRouterProvider.when('', '/');
       $urlRouterProvider.otherwise('/404');
     }
