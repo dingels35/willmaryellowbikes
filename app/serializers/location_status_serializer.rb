@@ -1,0 +1,2 @@
+class LocationSerializer < StatusSerializer
+end

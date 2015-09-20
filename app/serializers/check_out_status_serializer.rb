@@ -1,0 +1,2 @@
+class CheckOutStatusSerializer < StatusSerializer
+end

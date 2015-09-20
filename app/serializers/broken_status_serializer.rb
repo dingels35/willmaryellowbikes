@@ -1,0 +1,2 @@
+class BrokenStatusSerializer < StatusSerializer
+end

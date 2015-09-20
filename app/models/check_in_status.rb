@@ -1,0 +1,3 @@
+class CheckInStatus < Status
+
+end
