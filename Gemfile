@@ -12,7 +12,7 @@ gem "cancancan"
 gem 'devise'
 gem "pry-rails"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
-
+gem 'rack-cors'
 
 
 source 'https://rails-assets.org' do
@@ -32,7 +32,6 @@ group :development, :test do
   gem "pry-rescue"
   gem "pry-stack_explorer"
   gem 'pry-remote'
-  gem "spring"
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen'
 end
