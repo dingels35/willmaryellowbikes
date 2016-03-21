@@ -3,7 +3,11 @@ class StatusesController < ApplicationController
   before_filter :load_statuses, except: :create
 
   def index
-    @statuses = @statuses.apply_scopes(params[:scope]) if params[:scope]
+    @statuses = @statuses.apply_scope(params[:scope]) if params[:scope]
+    @statuses = @statuses.where(bike_rack_id: params[:bike_rack_id]) if params[:bike_rack_id]
+    @statuses = @statuses.limit(params[:limit]) if params[:limit]
+    @statuses = @statuses.order(created_at: :desc)
+
     respond_with(@statuses)
   end
 

@@ -5,7 +5,10 @@ class Status < ActiveRecord::Base
 
   scope :abandoned, -> { where(type: 'AbandonedStatus') }
   scope :broken, -> { where(type: 'BrokenStatus') }
+  scope :bike_count, -> { where(type: 'BikeCountStatus') }
   scope :unresolved, -> { where(resolved: false) }
+  FILTERABLE_SCOPES = %w{ abandoned broken bike_count unresolved }
+
 
   delegate :name, to: :bike_rack, prefix: true, allow_nil: true
   delegate :identifier, to: :bike, prefix: true, allow_nil: true
@@ -15,6 +18,11 @@ class Status < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
 
   # before_create :get_location_from_bike_rack
+
+  def self.apply_scope(scope)
+    return none unless FILTERABLE_SCOPES.include?(scope)
+    send(scope)
+  end
 
   private
 

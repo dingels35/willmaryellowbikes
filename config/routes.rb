@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :statuses, only: [:index, :show, :create]
     end
 
-    resources :statuses, only: [:create, :show]
+    resources :statuses, only: [:index, :create, :show]
   end
 
   get '*path', to: 'home#index'
