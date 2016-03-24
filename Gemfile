@@ -11,7 +11,7 @@ gem 'coffee-rails'
 gem "cancancan"
 gem 'devise'
 gem "pry-rails"
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw]
 gem 'rack-cors'
 
 
