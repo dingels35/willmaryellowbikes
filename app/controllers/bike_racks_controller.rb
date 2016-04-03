@@ -13,7 +13,7 @@ class BikeRacksController < ApplicationController
   def closest
     params[:lat] ||= 0
     params[:long] ||= 0
-    respond_with(BikeRack.near([params[:lat],params[:long]],20).first)
+    respond_with(BikeRack.near([params[:lat],params[:long]],20).first || {bike_rack: {}})
   end
 
 end
