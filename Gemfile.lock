@@ -65,6 +65,8 @@ GEM
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
+    figaro (1.1.1)
+      thor (~> 0.14)
     geocoder (1.2.11)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -173,6 +175,8 @@ GEM
     tilt (2.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2016.4)
+      tzinfo (>= 1.0.0)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -193,6 +197,7 @@ DEPENDENCIES
   cancancan
   coffee-rails
   devise
+  figaro
   geocoder
   pg
   pry-rails
@@ -216,5 +221,8 @@ DEPENDENCIES
   uglifier
   web-console
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
-   1.11.2
+   1.12.3

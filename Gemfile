@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
+
 gem 'puma'
 gem 'rails'
 gem 'pg'
@@ -13,6 +15,7 @@ gem 'devise'
 gem "pry-rails"
 gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw]
 gem 'rack-cors'
+gem 'figaro'
 
 
 source 'https://rails-assets.org' do
